@@ -1,0 +1,24 @@
+class ControllerCliente {
+    val listaCliente: MutableList<Cliente> = mutableListOf()
+    fun regristo_del_cliente() {
+        println("Ingrese su nombre  ")
+        val nombre = readln().toString()
+        println("Ingrese su primer aplellido ")
+        val  primerApellido  = readln().toString()
+        println("Ingrese su primer aplellido ")
+        val  primerSegundo  = readln().toString()
+        println("Ingrese su correo electronico ")
+        val correo_electronico = readln().toString()
+        println("Ingrese su telefono ")
+        val telefono = readln().toInt()
+
+        val registedClient = Cliente(nombre,primerApellido,primerSegundo , correo_electronico, telefono)
+        listaCliente.add(registedClient)
+    }
+    fun showcuestoner(){
+        for(habitacion in listaCliente){
+            println(" ${habitacion.getClienteData()}")
+        }
+    }
+    fun getClientebyindex (index: Int): Cliente =listaCliente [ index]
+}
